@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Byekahmi | Graphic Design Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .shape-blob {
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        }
+        .shape-ellipse {
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-white text-zinc-900 selection:bg-zinc-900 selection:text-white overflow-x-hidden">
+
+    <!-- Hintergrund-Dekoration (Ellipsen) -->
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div class="absolute -top-[10%] -left-[10%] w-[40vw] h-[40vw] bg-zinc-50 rounded-full blur-3xl opacity-50"></div>
+        <div class="absolute top-[40%] -right-[5%] w-[30vw] h-[50vw] bg-zinc-50 shape-blob blur-3xl opacity-60"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-zinc-100">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="font-black text-2xl tracking-tighter flex items-center gap-2">
+                BYEKAHMI <span class="text-xs font-normal tracking-normal text-zinc-400 mt-1">*</span>
+            </div>
+            <div class="hidden md:flex space-x-10 text-[10px] font-bold tracking-[0.2em] uppercase">
+                <a href="#home" class="hover:text-zinc-400 transition-colors">Home</a>
+                <a href="#about" class="hover:text-zinc-400 transition-colors">About</a>
+                <a href="#portfolio" class="hover:text-zinc-400 transition-colors">Portfolio</a>
+                <a href="#contact" class="hover:text-zinc-400 transition-colors">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-40 pb-20 px-6 max-w-6xl mx-auto min-h-screen flex flex-col justify-center relative">
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-64 h-64 bg-zinc-50 shape-ellipse -z-10 hidden lg:block animate-pulse"></div>
+        
+        <span class="text-zinc-400 font-medium tracking-[0.3em] mb-6 uppercase text-xs">Portfolio 2026</span>
+        <h1 class="text-[clamp(3rem,15vw,9rem)] font-black tracking-tighter leading-[0.85] mb-12">
+            GRAPHIC<br>DESIGN
+        </h1>
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-12">
+            <div class="max-w-md">
+                <p class="text-xl text-zinc-500 leading-relaxed font-light italic">
+                    "Für mich ist Design dann gelungen, wenn Ästhetik und Funktionalität im perfekten Gleichgewicht stehen."
+                </p>
+                <div class="mt-8 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full border border-zinc-200 flex items-center justify-center text-xl">*</div>
+                    <div class="h-px w-24 bg-zinc-200"></div>
+                </div>
+            </div>
+            <div class="text-[12rem] font-black text-zinc-100/50 leading-none select-none hidden xl:block">K</div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 bg-zinc-50/50 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+            <div class="relative">
+                <div class="absolute -inset-4 bg-zinc-200/50 shape-blob -z-10"></div>
+                <div class="aspect-[4/5] bg-zinc-200 overflow-hidden shape-ellipse grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl">
+                    <!-- Bildplatzhalter -->
+                    <div class="w-full h-full flex items-center justify-center text-zinc-400 italic bg-zinc-300">
+                        [Foto: Kiliano Lucas Ribeiro]
+                    </div>
+                </div>
+                <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-lg border border-zinc-100 font-bold text-2xl tracking-tighter">
+                    IU
+                </div>
+            </div>
+            <div class="reveal">
+                <h2 class="text-5xl font-black mb-10 uppercase tracking-tighter italic">About Me</h2>
+                <p class="text-xl leading-relaxed text-zinc-600 mb-8 font-light">
+                    Ich bin ein 27-jähriger Design-Student im 5. Semester an der Internationalen Hochschule (IU). 
+                    Ich kombiniere ein scharfes Auge für Details mit einem ausgeprägten Sinn für Balance und Harmonie.
+                </p>
+                
+                <div class="grid grid-cols-2 gap-8 mt-16 border-t border-zinc-200 pt-10">
+                    <div class="space-y-4">
+                        <h3 class="font-bold uppercase text-[10px] tracking-widest text-zinc-400">Technical Skills</h3>
+                        <ul class="text-sm space-y-2 text-zinc-600 font-medium uppercase tracking-tight">
+                            <li>Adobe Creative Cloud</li>
+                            <li>Illustrator & InDesign</li>
+                            <li>Photoshop & Figma</li>
+                        </ul>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="font-bold uppercase text-[10px] tracking-widest text-zinc-400">Education</h3>
+                        <p class="text-sm text-zinc-600 leading-snug">B.A. MEDIENDESIGN (DUAL)<br>INTERNATIONALE HOCHSCHULE</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-32 px-6 max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-baseline mb-24 gap-4">
+            <h2 class="text-6xl font-black uppercase tracking-tighter italic">Projects</h2>
+            <div class="flex items-center gap-4 text-zinc-400 text-xs tracking-widest uppercase">
+                <span>Selected Work</span>
+                <div class="w-12 h-px bg-zinc-300"></div>
+                <span>2024–2026</span>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-x-16 gap-y-32">
+            <!-- Project 1 -->
+            <div class="reveal group">
+                <div class="relative mb-10">
+                    <div class="absolute -inset-2 bg-zinc-100 shape-ellipse group-hover:scale-105 transition-transform duration-700 -z-10"></div>
+                    <div class="aspect-video bg-white overflow-hidden rounded-[2rem] border border-zinc-100 flex items-center justify-center transition-all duration-700 shadow-sm group-hover:shadow-xl">
+                        <div class="text-zinc-300 text-xs font-bold uppercase tracking-widest">[Tierheim Brandenburg]</div>
+                    </div>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-2xl font-black uppercase tracking-tighter mb-3 italic">Logo & Branding</h3>
+                        <p class="text-zinc-500 text-sm leading-relaxed max-w-sm">Modernisierung der visuellen Identität durch neue Farben und Formen für einen professionellen Markenauftritt.</p>
+                    </div>
+                    <span class="text-4xl font-light text-zinc-200 italic">01</span>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="reveal group md:mt-24">
+                <div class="relative mb-10">
+                    <div class="absolute -inset-2 bg-zinc-100 shape-blob group-hover:scale-105 transition-transform duration-700 -z-10"></div>
+                    <div class="aspect-video bg-white overflow-hidden rounded-[2rem] border border-zinc-100 flex items-center justify-center transition-all duration-700 shadow-sm group-hover:shadow-xl">
+                        <div class="text-zinc-300 text-xs font-bold uppercase tracking-widest">[Urbib App Design]</div>
+                    </div>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-2xl font-black uppercase tracking-tighter mb-3 italic">UI/UX Figma</h3>
+                        <p class="text-zinc-500 text-sm leading-relaxed max-w-sm">Konzeption einer mobilen App inklusive Logo-Entwicklung und User Journey Prototyping.</p>
+                    </div>
+                    <span class="text-4xl font-light text-zinc-200 italic">02</span>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="reveal group">
+                <div class="relative mb-10">
+                    <div class="absolute -inset-2 bg-zinc-100 shape-ellipse group-hover:scale-105 transition-transform duration-700 -z-10"></div>
+                    <div class="aspect-video bg-white overflow-hidden rounded-[2rem] border border-zinc-100 flex items-center justify-center transition-all duration-700 shadow-sm group-hover:shadow-xl">
+                        <div class="text-zinc-300 text-xs font-bold uppercase tracking-widest">[Second Life Magazin]</div>
+                    </div>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-2xl font-black uppercase tracking-tighter mb-3 italic">Editorial Design</h3>
+                        <p class="text-zinc-500 text-sm leading-relaxed max-w-sm">Ein Magazin-Projekt über Upcycling und Second-Hand-Kultur mit Fokus auf haptische Ästhetik.</p>
+                    </div>
+                    <span class="text-4xl font-light text-zinc-200 italic">03</span>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="reveal group md:mt-24">
+                <div class="relative mb-10">
+                    <div class="absolute -inset-2 bg-zinc-100 shape-blob group-hover:scale-105 transition-transform duration-700 -z-10"></div>
+                    <div class="aspect-video bg-white overflow-hidden rounded-[2rem] border border-zinc-100 flex items-center justify-center transition-all duration-700 shadow-sm group-hover:shadow-xl">
+                        <div class="text-zinc-300 text-xs font-bold uppercase tracking-widest">[Gesund.Fact]</div>
+                    </div>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-2xl font-black uppercase tracking-tighter mb-3 italic">Social Media</h3>
+                        <p class="text-zinc-500 text-sm leading-relaxed max-w-sm">Designsystem mit festen Layout-Vorlagen für digitale Kommunikationsstrategien.</p>
+                    </div>
+                    <span class="text-4xl font-light text-zinc-200 italic">04</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-zinc-900 text-white pt-32 pb-12 px-6 overflow-hidden relative">
+        <div class="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-white/5 shape-blob blur-[100px] -z-0"></div>
+        
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="mb-32">
+                <h2 class="text-7xl md:text-9xl font-black tracking-tighter leading-none mb-12 italic uppercase">
+                    Get in<br>Touch
+                </h2>
+                <div class="flex flex-wrap gap-8 items-center">
+                    <a href="mailto:byekahmi@gmail.com" class="text-2xl md:text-4xl font-light hover:text-zinc-400 transition-colors border-b border-white/20 pb-2">byekahmi@gmail.com</a>
+                    <div class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-2xl animate-spin-slow">*</div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-16 border-t border-white/10 pt-16">
+                <div>
+                    <h4 class="text-[10px] font-bold tracking-[0.3em] uppercase text-zinc-500 mb-6">Contact Details</h4>
+                    <p class="text-sm font-medium">Charlottenburg, Berlin<br>+49 0162 7622077</p>
+                </div>
+                <div>
+                    <h4 class="text-[10px] font-bold tracking-[0.3em] uppercase text-zinc-500 mb-6">Social</h4>
+                    <p class="text-sm font-medium underline underline-offset-4 decoration-zinc-700">
+                        <a href="#" class="hover:text-zinc-400 transition-colors">Instagram</a><br>
+                        <a href="#" class="hover:text-zinc-400 transition-colors">LinkedIn</a>
+                    </p>
+                </div>
+                <div class="flex items-end md:justify-end">
+                    <div class="font-black text-4xl tracking-tighter">BYEKAHMI</div>
+                </div>
+            </div>
+            
+            <div class="mt-24 flex flex-col md:flex-row justify-between items-center text-[8px] tracking-[0.4em] uppercase text-zinc-600 gap-4">
+                <p>© 2026 Kiliano Lucas Ribeiro — IU Design Portfolio</p>
+                <div class="flex items-center gap-2 italic">
+                    <span>Aesthetic</span> <span>*</span> <span>Function</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+            animation: spin-slow 10s linear infinite;
+        }
+    </style>
+
+    <script>
+        // Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        // Initial check
+        reveal();
+    </script>
+</body>
+</html>
