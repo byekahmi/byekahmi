@@ -12,232 +12,223 @@
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
+            background-color: white;
+            color: black;
         }
-        .shape-blob {
-            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        .organic-shape {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            background: black;
+            opacity: 0.03;
+            filter: blur(40px);
         }
-        .shape-ellipse {
-            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+        .logo-k {
+            fill: currentColor;
         }
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
+        .custom-cursor {
+            mix-blend-mode: difference;
+        }
     </style>
 </head>
-<body class="bg-white text-zinc-900 selection:bg-zinc-900 selection:text-white overflow-x-hidden">
+<body class="selection:bg-black selection:text-white overflow-x-hidden">
 
-    <!-- Hintergrund-Dekoration (Ellipsen) -->
-    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-        <div class="absolute -top-[10%] -left-[10%] w-[40vw] h-[40vw] bg-zinc-50 rounded-full blur-3xl opacity-50"></div>
-        <div class="absolute top-[40%] -right-[5%] w-[30vw] h-[50vw] bg-zinc-50 shape-blob blur-3xl opacity-60"></div>
+    <!-- Organische Hintergrund-Elemente -->
+    <div class="fixed inset-0 -z-10 pointer-events-none">
+        <div class="absolute top-[-10%] left-[-5%] w-[60vw] h-[60vw] organic-shape"></div>
+        <div class="absolute bottom-[-10%] right-[-5%] w-[50vw] h-[50vw] organic-shape" style="border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;"></div>
     </div>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-zinc-100">
-        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="font-black text-2xl tracking-tighter flex items-center gap-2">
-                BYEKAHMI <span class="text-xs font-normal tracking-normal text-zinc-400 mt-1">*</span>
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm z-50 border-b border-black/5">
+        <div class="max-w-7xl mx-auto px-8 h-24 flex items-center justify-between">
+            <div class="flex items-center gap-3 group cursor-pointer">
+                <!-- SVG Logo Nachbau -->
+                <svg width="40" height="40" viewBox="0 0 100 100" class="logo-k">
+                    <rect x="42" y="20" width="8" height="60" />
+                    <path d="M50 50 L75 25 M50 50 L75 75" stroke="black" stroke-width="8" fill="none" />
+                    <ellipse cx="35" cy="50" rx="20" ry="12" stroke="black" stroke-width="8" fill="none" />
+                </svg>
+                <span class="font-black text-2xl tracking-[ -0.05em] uppercase">Byekahmi</span>
             </div>
-            <div class="hidden md:flex space-x-10 text-[10px] font-bold tracking-[0.2em] uppercase">
-                <a href="#home" class="hover:text-zinc-400 transition-colors">Home</a>
-                <a href="#about" class="hover:text-zinc-400 transition-colors">About</a>
-                <a href="#portfolio" class="hover:text-zinc-400 transition-colors">Portfolio</a>
-                <a href="#contact" class="hover:text-zinc-400 transition-colors">Contact</a>
-            </div>
-            <div class="md:hidden">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <div class="hidden md:flex space-x-12 text-[11px] font-black tracking-[0.25em] uppercase">
+                <a href="#work" class="hover:line-through transition-all underline-offset-8">Work</a>
+                <a href="#about" class="hover:line-through transition-all underline-offset-8">About</a>
+                <a href="#contact" class="hover:line-through transition-all underline-offset-8">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="pt-40 pb-20 px-6 max-w-6xl mx-auto min-h-screen flex flex-col justify-center relative">
-        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-64 h-64 bg-zinc-50 shape-ellipse -z-10 hidden lg:block animate-pulse"></div>
-        
-        <span class="text-zinc-400 font-medium tracking-[0.3em] mb-6 uppercase text-xs">Portfolio 2026</span>
-        <h1 class="text-[clamp(3rem,15vw,9rem)] font-black tracking-tighter leading-[0.85] mb-12">
-            GRAPHIC<br>DESIGN
-        </h1>
-        
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-12">
-            <div class="max-w-md">
-                <p class="text-xl text-zinc-500 leading-relaxed font-light italic">
-                    "Für mich ist Design dann gelungen, wenn Ästhetik und Funktionalität im perfekten Gleichgewicht stehen."
-                </p>
-                <div class="mt-8 flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-full border border-zinc-200 flex items-center justify-center text-xl">*</div>
-                    <div class="h-px w-24 bg-zinc-200"></div>
-                </div>
+    <section class="min-h-screen pt-32 pb-20 px-8 flex flex-col justify-center max-w-7xl mx-auto relative">
+        <div class="grid lg:grid-cols-12 gap-12 items-end">
+            <div class="lg:col-span-9">
+                <span class="text-xs font-black tracking-[0.4em] uppercase mb-8 block">Graphic Designer — 2026</span>
+                <h1 class="text-[clamp(4rem,18vw,14rem)] font-[900] tracking-[-0.07em] leading-[0.82] uppercase">
+                    Byekahmi<br>Studio
+                </h1>
             </div>
-            <div class="text-[12rem] font-black text-zinc-100/50 leading-none select-none hidden xl:block">K</div>
+            <div class="lg:col-span-3 flex flex-col items-start lg:items-end gap-8">
+                <div class="w-24 h-24 border-2 border-black rounded-full flex items-center justify-center animate-spin-slow">
+                    <span class="text-3xl font-black">*</span>
+                </div>
+                <p class="text-sm font-medium leading-relaxed max-w-[200px] lg:text-right uppercase tracking-tighter">
+                    Ästhetik und Funktionalität im perfekten Gleichgewicht.
+                </p>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-12 left-8 flex items-center gap-4">
+            <div class="w-px h-12 bg-black animate-bounce"></div>
+            <span class="text-[10px] font-black tracking-widest uppercase">Scroll</span>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-32 bg-zinc-50/50 px-6">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
-            <div class="relative">
-                <div class="absolute -inset-4 bg-zinc-200/50 shape-blob -z-10"></div>
-                <div class="aspect-[4/5] bg-zinc-200 overflow-hidden shape-ellipse grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl">
-                    <!-- Bildplatzhalter -->
-                    <div class="w-full h-full flex items-center justify-center text-zinc-400 italic bg-zinc-300">
-                        [Foto: Kiliano Lucas Ribeiro]
-                    </div>
-                </div>
-                <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-lg border border-zinc-100 font-bold text-2xl tracking-tighter">
-                    IU
-                </div>
-            </div>
-            <div class="reveal">
-                <h2 class="text-5xl font-black mb-10 uppercase tracking-tighter italic">About Me</h2>
-                <p class="text-xl leading-relaxed text-zinc-600 mb-8 font-light">
-                    Ich bin ein 27-jähriger Design-Student im 5. Semester an der Internationalen Hochschule (IU). 
-                    Ich kombiniere ein scharfes Auge für Details mit einem ausgeprägten Sinn für Balance und Harmonie.
-                </p>
-                
-                <div class="grid grid-cols-2 gap-8 mt-16 border-t border-zinc-200 pt-10">
-                    <div class="space-y-4">
-                        <h3 class="font-bold uppercase text-[10px] tracking-widest text-zinc-400">Technical Skills</h3>
-                        <ul class="text-sm space-y-2 text-zinc-600 font-medium uppercase tracking-tight">
-                            <li>Adobe Creative Cloud</li>
-                            <li>Illustrator & InDesign</li>
-                            <li>Photoshop & Figma</li>
-                        </ul>
-                    </div>
-                    <div class="space-y-4">
-                        <h3 class="font-bold uppercase text-[10px] tracking-widest text-zinc-400">Education</h3>
-                        <p class="text-sm text-zinc-600 leading-snug">B.A. MEDIENDESIGN (DUAL)<br>INTERNATIONALE HOCHSCHULE</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-32 px-6 max-w-6xl mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-baseline mb-24 gap-4">
-            <h2 class="text-6xl font-black uppercase tracking-tighter italic">Projects</h2>
-            <div class="flex items-center gap-4 text-zinc-400 text-xs tracking-widest uppercase">
-                <span>Selected Work</span>
-                <div class="w-12 h-px bg-zinc-300"></div>
-                <span>2024–2026</span>
-            </div>
+    <!-- Project Gallery -->
+    <section id="work" class="py-32 px-8 max-w-7xl mx-auto">
+        <div class="flex items-center gap-6 mb-24">
+            <h2 class="text-6xl font-black uppercase tracking-tighter italic">Auswahl</h2>
+            <div class="flex-grow h-px bg-black/10"></div>
+            <span class="text-[10px] font-black tracking-[0.3em] uppercase opacity-40">Projects</span>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-x-16 gap-y-32">
+        <div class="grid md:grid-cols-2 gap-x-20 gap-y-40">
             <!-- Project 1 -->
-            <div class="reveal group">
-                <div class="relative mb-10">
-                    <div class="absolute -inset-2 bg-zinc-100 shape-ellipse group-hover:scale-105 transition-transform duration-700 -z-10"></div>
-                    <div class="aspect-video bg-white overflow-hidden rounded-[2rem] border border-zinc-100 flex items-center justify-center transition-all duration-700 shadow-sm group-hover:shadow-xl">
-                        <div class="text-zinc-300 text-xs font-bold uppercase tracking-widest">[Tierheim Brandenburg]</div>
-                    </div>
+            <div class="reveal group cursor-pointer">
+                <div class="relative mb-12 overflow-hidden aspect-[4/3] bg-black flex items-center justify-center transition-all duration-700 rounded-[3rem] group-hover:rounded-none">
+                    <!-- Bildplatzhalter -->
+                    <div class="text-white font-black text-xs tracking-widest uppercase opacity-20 group-hover:opacity-100 transition-opacity">Tierheim Brandenburg</div>
+                    <svg width="200" height="200" class="absolute opacity-5 text-white pointer-events-none group-hover:scale-150 transition-transform duration-1000">
+                        <ellipse cx="100" cy="100" rx="80" ry="40" stroke="currentColor" stroke-width="1" fill="none" />
+                    </svg>
                 </div>
-                <div class="flex justify-between items-start">
+                <div class="flex justify-between items-end border-b-2 border-black pb-6">
                     <div>
-                        <h3 class="text-2xl font-black uppercase tracking-tighter mb-3 italic">Logo & Branding</h3>
-                        <p class="text-zinc-500 text-sm leading-relaxed max-w-sm">Modernisierung der visuellen Identität durch neue Farben und Formen für einen professionellen Markenauftritt.</p>
+                        <span class="text-[10px] font-black uppercase tracking-widest opacity-40 mb-2 block">01 / Branding</span>
+                        <h3 class="text-4xl font-black uppercase tracking-tighter italic group-hover:translate-x-4 transition-transform">Logo Redesign</h3>
                     </div>
-                    <span class="text-4xl font-light text-zinc-200 italic">01</span>
+                    <div class="text-2xl font-black">→</div>
                 </div>
             </div>
 
             <!-- Project 2 -->
-            <div class="reveal group md:mt-24">
-                <div class="relative mb-10">
-                    <div class="absolute -inset-2 bg-zinc-100 shape-blob group-hover:scale-105 transition-transform duration-700 -z-10"></div>
-                    <div class="aspect-video bg-white overflow-hidden rounded-[2rem] border border-zinc-100 flex items-center justify-center transition-all duration-700 shadow-sm group-hover:shadow-xl">
-                        <div class="text-zinc-300 text-xs font-bold uppercase tracking-widest">[Urbib App Design]</div>
-                    </div>
+            <div class="reveal group cursor-pointer md:mt-40">
+                <div class="relative mb-12 overflow-hidden aspect-[4/3] bg-black flex items-center justify-center transition-all duration-700 rounded-[3rem] group-hover:rounded-none">
+                    <div class="text-white font-black text-xs tracking-widest uppercase opacity-20 group-hover:opacity-100 transition-opacity">Urbib App Design</div>
+                    <svg width="200" height="200" class="absolute opacity-5 text-white pointer-events-none group-hover:rotate-45 transition-transform duration-1000">
+                        <rect x="50" y="50" width="100" height="100" stroke="currentColor" stroke-width="1" fill="none" />
+                    </svg>
                 </div>
-                <div class="flex justify-between items-start">
+                <div class="flex justify-between items-end border-b-2 border-black pb-6">
                     <div>
-                        <h3 class="text-2xl font-black uppercase tracking-tighter mb-3 italic">UI/UX Figma</h3>
-                        <p class="text-zinc-500 text-sm leading-relaxed max-w-sm">Konzeption einer mobilen App inklusive Logo-Entwicklung und User Journey Prototyping.</p>
+                        <span class="text-[10px] font-black uppercase tracking-widest opacity-40 mb-2 block">02 / UI Design</span>
+                        <h3 class="text-4xl font-black uppercase tracking-tighter italic group-hover:translate-x-4 transition-transform">Mobile Interface</h3>
                     </div>
-                    <span class="text-4xl font-light text-zinc-200 italic">02</span>
+                    <div class="text-2xl font-black">→</div>
                 </div>
             </div>
-
+            
             <!-- Project 3 -->
-            <div class="reveal group">
-                <div class="relative mb-10">
-                    <div class="absolute -inset-2 bg-zinc-100 shape-ellipse group-hover:scale-105 transition-transform duration-700 -z-10"></div>
-                    <div class="aspect-video bg-white overflow-hidden rounded-[2rem] border border-zinc-100 flex items-center justify-center transition-all duration-700 shadow-sm group-hover:shadow-xl">
-                        <div class="text-zinc-300 text-xs font-bold uppercase tracking-widest">[Second Life Magazin]</div>
-                    </div>
+            <div class="reveal group cursor-pointer">
+                <div class="relative mb-12 overflow-hidden aspect-[4/3] bg-black flex items-center justify-center transition-all duration-700 rounded-[3rem] group-hover:rounded-none">
+                    <div class="text-white font-black text-xs tracking-widest uppercase opacity-20 group-hover:opacity-100 transition-opacity">Second Life Magazin</div>
+                    <div class="absolute w-full h-full border border-white/10 scale-90 rounded-full group-hover:scale-110 transition-transform duration-1000"></div>
                 </div>
-                <div class="flex justify-between items-start">
+                <div class="flex justify-between items-end border-b-2 border-black pb-6">
                     <div>
-                        <h3 class="text-2xl font-black uppercase tracking-tighter mb-3 italic">Editorial Design</h3>
-                        <p class="text-zinc-500 text-sm leading-relaxed max-w-sm">Ein Magazin-Projekt über Upcycling und Second-Hand-Kultur mit Fokus auf haptische Ästhetik.</p>
+                        <span class="text-[10px] font-black uppercase tracking-widest opacity-40 mb-2 block">03 / Print</span>
+                        <h3 class="text-4xl font-black uppercase tracking-tighter italic group-hover:translate-x-4 transition-transform">Editorial Design</h3>
                     </div>
-                    <span class="text-4xl font-light text-zinc-200 italic">03</span>
+                    <div class="text-2xl font-black">→</div>
                 </div>
             </div>
 
             <!-- Project 4 -->
-            <div class="reveal group md:mt-24">
-                <div class="relative mb-10">
-                    <div class="absolute -inset-2 bg-zinc-100 shape-blob group-hover:scale-105 transition-transform duration-700 -z-10"></div>
-                    <div class="aspect-video bg-white overflow-hidden rounded-[2rem] border border-zinc-100 flex items-center justify-center transition-all duration-700 shadow-sm group-hover:shadow-xl">
-                        <div class="text-zinc-300 text-xs font-bold uppercase tracking-widest">[Gesund.Fact]</div>
-                    </div>
+            <div class="reveal group cursor-pointer md:mt-40">
+                <div class="relative mb-12 overflow-hidden aspect-[4/3] bg-black flex items-center justify-center transition-all duration-700 rounded-[3rem] group-hover:rounded-none">
+                    <div class="text-white font-black text-xs tracking-widest uppercase opacity-20 group-hover:opacity-100 transition-opacity">Social Strategy</div>
+                    <div class="text-6xl text-white opacity-10">*</div>
                 </div>
-                <div class="flex justify-between items-start">
+                <div class="flex justify-between items-end border-b-2 border-black pb-6">
                     <div>
-                        <h3 class="text-2xl font-black uppercase tracking-tighter mb-3 italic">Social Media</h3>
-                        <p class="text-zinc-500 text-sm leading-relaxed max-w-sm">Designsystem mit festen Layout-Vorlagen für digitale Kommunikationsstrategien.</p>
+                        <span class="text-[10px] font-black uppercase tracking-widest opacity-40 mb-2 block">04 / Strategy</span>
+                        <h3 class="text-4xl font-black uppercase tracking-tighter italic group-hover:translate-x-4 transition-transform">Visual Systems</h3>
                     </div>
-                    <span class="text-4xl font-light text-zinc-200 italic">04</span>
+                    <div class="text-2xl font-black">→</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="contact" class="bg-zinc-900 text-white pt-32 pb-12 px-6 overflow-hidden relative">
-        <div class="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-white/5 shape-blob blur-[100px] -z-0"></div>
+    <!-- About Section -->
+    <section id="about" class="py-40 bg-black text-white overflow-hidden relative">
+        <!-- Riesen-K im Hintergrund -->
+        <div class="absolute right-0 top-0 text-[40rem] font-black opacity-[0.03] select-none leading-none pointer-events-none">K</div>
         
-        <div class="max-w-6xl mx-auto relative z-10">
-            <div class="mb-32">
-                <h2 class="text-7xl md:text-9xl font-black tracking-tighter leading-none mb-12 italic uppercase">
-                    Get in<br>Touch
-                </h2>
-                <div class="flex flex-wrap gap-8 items-center">
-                    <a href="mailto:byekahmi@gmail.com" class="text-2xl md:text-4xl font-light hover:text-zinc-400 transition-colors border-b border-white/20 pb-2">byekahmi@gmail.com</a>
-                    <div class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-2xl animate-spin-slow">*</div>
+        <div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-32 items-center">
+            <div class="reveal">
+                <h2 class="text-8xl font-black uppercase tracking-tighter mb-16 italic">Kiliano<br>Lucas</h2>
+                <div class="space-y-8 max-w-lg text-lg font-light leading-relaxed">
+                    <p>Ich bin ein 27-jähriger Design-Student im 5. Semester an der Internationalen Hochschule IU.</p>
+                    <p>Mein Fokus liegt auf der Verbindung von radikalem Minimalismus mit organischen, haptischen Formen. Jedes Design ist eine Suche nach Balance.</p>
+                </div>
+                
+                <div class="mt-20 flex gap-12">
+                    <div>
+                        <span class="block text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-4">Location</span>
+                        <span class="text-xl font-bold uppercase tracking-tighter">Berlin</span>
+                    </div>
+                    <div>
+                        <span class="block text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-4">Status</span>
+                        <span class="text-xl font-bold uppercase tracking-tighter">5. Semester IU</span>
+                    </div>
                 </div>
             </div>
+            <div class="reveal relative">
+                <div class="aspect-[4/5] bg-zinc-900 overflow-hidden rounded-[4rem] rotate-3 hover:rotate-0 transition-transform duration-1000 grayscale">
+                    <!-- Platzhalter für dein Foto (Seite 4) -->
+                    <div class="w-full h-full flex items-center justify-center text-zinc-800 italic">Portrait Image</div>
+                </div>
+                <!-- Schwebende Elipse -->
+                <div class="absolute -top-10 -right-10 w-40 h-20 border border-white/20 rounded-full blur-sm"></div>
+            </div>
+        </div>
+    </section>
 
-            <div class="grid md:grid-cols-3 gap-16 border-t border-white/10 pt-16">
-                <div>
-                    <h4 class="text-[10px] font-bold tracking-[0.3em] uppercase text-zinc-500 mb-6">Contact Details</h4>
-                    <p class="text-sm font-medium">Charlottenburg, Berlin<br>+49 0162 7622077</p>
-                </div>
-                <div>
-                    <h4 class="text-[10px] font-bold tracking-[0.3em] uppercase text-zinc-500 mb-6">Social</h4>
-                    <p class="text-sm font-medium underline underline-offset-4 decoration-zinc-700">
-                        <a href="#" class="hover:text-zinc-400 transition-colors">Instagram</a><br>
-                        <a href="#" class="hover:text-zinc-400 transition-colors">LinkedIn</a>
-                    </p>
-                </div>
-                <div class="flex items-end md:justify-end">
-                    <div class="font-black text-4xl tracking-tighter">BYEKAHMI</div>
+    <!-- Footer / Contact -->
+    <footer id="contact" class="py-32 px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-40">
+            <h2 class="text-[12vw] font-black uppercase tracking-tighter leading-none italic mb-16">Ready to<br>Create?</h2>
+            <a href="mailto:byekahmi@gmail.com" class="text-2xl md:text-5xl font-black hover:line-through transition-all uppercase tracking-tighter">byekahmi@gmail.com</a>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-12 pt-20 border-t-4 border-black">
+            <div>
+                <h4 class="text-[10px] font-black tracking-widest uppercase mb-6">Connect</h4>
+                <div class="flex flex-col gap-2 font-black text-sm uppercase italic">
+                    <a href="#" class="hover:translate-x-2 transition-transform">Instagram / @byekahmi</a>
+                    <a href="#" class="hover:translate-x-2 transition-transform">LinkedIn / Ribeiro</a>
                 </div>
             </div>
-            
-            <div class="mt-24 flex flex-col md:flex-row justify-between items-center text-[8px] tracking-[0.4em] uppercase text-zinc-600 gap-4">
-                <p>© 2026 Kiliano Lucas Ribeiro — IU Design Portfolio</p>
-                <div class="flex items-center gap-2 italic">
-                    <span>Aesthetic</span> <span>*</span> <span>Function</span>
-                </div>
+            <div>
+                <h4 class="text-[10px] font-black tracking-widest uppercase mb-6">Legal</h4>
+                <p class="text-[10px] font-bold uppercase tracking-widest opacity-40 italic">© 2026 Kiliano Lucas Ribeiro — All rights reserved</p>
+            </div>
+            <div class="md:text-right flex flex-col md:items-end gap-4">
+                <svg width="60" height="60" viewBox="0 0 100 100" class="logo-k">
+                    <rect x="42" y="20" width="8" height="60" />
+                    <path d="M50 50 L75 25 M50 50 L75 75" stroke="black" stroke-width="8" fill="none" />
+                    <ellipse cx="35" cy="50" rx="20" ry="12" stroke="black" stroke-width="8" fill="none" />
+                </svg>
+                <p class="text-[8px] font-black tracking-[0.5em] uppercase">Berlin / Charlottenburg</p>
             </div>
         </div>
     </footer>
@@ -248,26 +239,25 @@
             to { transform: rotate(360deg); }
         }
         .animate-spin-slow {
-            animation: spin-slow 10s linear infinite;
+            animation: spin-slow 12s linear infinite;
         }
     </style>
 
     <script>
-        // Scroll Reveal Animation
+        // Scroll Reveal Logic
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
+                var elementVisible = 100;
                 if (elementTop < windowHeight - elementVisible) {
                     reveals[i].classList.add("active");
                 }
             }
         }
         window.addEventListener("scroll", reveal);
-        // Initial check
-        reveal();
+        reveal(); // Initial check
     </script>
 </body>
 </html>
