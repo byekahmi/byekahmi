@@ -21,7 +21,7 @@
             border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
         }
 
-        .ellipse-bg {
+        .organic-loop {
             border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
         }
 
@@ -62,12 +62,12 @@
 
         @keyframes float {
             0% { transform: translate(0, 0); }
-            50% { transform: translate(10px, -15px); }
+            50% { transform: translate(15px, -20px); }
             100% { transform: translate(0, 0); }
         }
 
         .float-animation {
-            animation: float 6s ease-in-out infinite;
+            animation: float 8s ease-in-out infinite;
         }
     </style>
 </head>
@@ -77,10 +77,10 @@
     <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 py-6 border-b border-black/5">
         <div class="max-w-screen-xl mx-auto px-8 flex justify-between items-center">
             <a href="#home" class="flex items-center gap-3">
-                <!-- Hier dein Logo (Screenshot 2026-03-26 163914.png) einfügen -->
-                <img src="https://drive.google.com/file/d/1WXahZixj-1oM6loESfFSRLQVt61_AkPN/view" alt="Byekahmi Logo" class="h-10 w-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <span class="font-black text-2xl tracking-tighter uppercase hidden">Byekahmi</span>
-                <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center text-white font-black text-xs">K</div>
+                <!-- Logo aus dem Drive Ordner -->
+                <img src="logo-byekahmi.png" alt="Byekahmi Logo" class="h-12 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="hidden w-10 h-10 bg-black rounded-full flex items-center justify-center text-white font-black text-sm">K</div>
+                <span class="font-black text-2xl tracking-tighter uppercase">Byekahmi</span>
             </a>
             <div class="hidden md:flex space-x-12 text-[10px] font-black tracking-[0.3em] uppercase">
                 <a href="#about" class="nav-link">About</a>
@@ -93,58 +93,62 @@
     <!-- Home Section -->
     <section id="home" class="min-h-screen flex flex-col justify-center items-center px-8 relative">
         <!-- Dekorative organische Form im Hintergrund -->
-        <div class="absolute -z-10 w-[60vw] h-[60vw] bg-zinc-50 organic-mask float-animation blur-3xl opacity-50"></div>
+        <div class="absolute -z-10 w-[70vw] h-[70vw] bg-zinc-50 organic-mask float-animation blur-3xl opacity-60"></div>
         
         <div class="text-center reveal">
-            <span class="text-[10px] font-black tracking-[0.6em] uppercase mb-8 block opacity-40">Portfolio 2026</span>
-            <h1 class="text-[clamp(3.5rem,15vw,12rem)] font-black tracking-[-0.08em] leading-[0.8] uppercase mb-12">
+            <span class="text-[10px] font-black tracking-[0.6em] uppercase mb-10 block opacity-40">Portfolio 2026</span>
+            <h1 class="text-[clamp(3.5rem,14vw,11rem)] font-black tracking-[-0.08em] leading-[0.8] uppercase mb-16">
                 Graphic<br>Design
             </h1>
-            <div class="flex flex-col items-center gap-6">
-                <div class="w-px h-24 bg-black/20"></div>
-                <div class="flex items-center gap-4">lo
-                    <!-- Platz für Logo-Symbol -->
-                    <img src="https://drive.google.com/file/d/1WXahZixj-1oM6loESfFSRLQVt61_AkPN/view" alt="Byekahmi Symbol" class="w-16 h-16 object-contain">
-                    <span class="text-xl font-bold italic tracking-tighter">byekahmi</span>
+            <div class="flex flex-col items-center gap-8">
+                <div class="w-px h-24 bg-black/30"></div>
+                <div class="flex items-center gap-6">
+                    <!-- Logo-Symbol groß im Hero -->
+                    <img src="logo-byekahmi.png" alt="Byekahmi Symbol" class="w-20 h-20 object-contain">
+                    <span class="text-2xl font-bold italic tracking-tighter">byekahmi</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Me Section -->
-    <section id="about" class="py-40 bg-black text-white px-8">
-        <div class="max-w-screen-xl mx-auto grid lg:grid-cols-2 gap-24 items-center">
+    <section id="about" class="py-48 bg-black text-white px-8 relative overflow-hidden">
+        <!-- Organischer Akzent im Hintergrund -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 organic-loop blur-3xl -mr-48 -mt-48"></div>
+
+        <div class="max-w-screen-xl mx-auto grid lg:grid-cols-2 gap-24 items-center relative z-10">
             <div class="reveal">
                 <div class="relative">
-                    <div class="aspect-[3/4] organic-mask bg-zinc-800 overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000">
-                        <!-- Dein Bild aus dem Drive Ordner hier einfügen -->
-                        <img src="https://drive.google.com/file/d/1vWyR74NmwQqJi9zES27XeQ-nYqj_tRnR/view" alt="Kiliano Lucas Ribeiro" class="w-full h-full object-cover">
+                    <div class="aspect-[3/4] organic-mask bg-zinc-900 overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 border border-white/10 shadow-2xl">
+                        <!-- Dein Bild 'kahminsky.png' -->
+                        <img src="kahminsky.png" alt="Kiliano Lucas Ribeiro" class="w-full h-full object-cover" onerror="this.style.background='#18181b';">
                     </div>
-                    <!-- Dekorative Elipse -->
-                    <div class="absolute -bottom-10 -right-10 w-40 h-40 border border-white/10 rounded-full flex items-center justify-center animate-pulse">
-                        <span class="text-4xl font-black italic opacity-20">K</span>
+                    <!-- Dekorative Elipse mit Initialen -->
+                    <div class="absolute -bottom-12 -right-12 w-48 h-48 border border-white/20 rounded-full flex items-center justify-center animate-pulse">
+                        <span class="text-5xl font-black italic opacity-10 select-none">K</span>
                     </div>
                 </div>
             </div>
             <div class="reveal">
-                <h2 class="text-5xl font-black uppercase tracking-tighter mb-12 italic border-b border-white/10 pb-6">About Me</h2>
-                <div class="space-y-8 text-xl font-light leading-relaxed max-w-xl">
+                <h2 class="text-6xl font-black uppercase tracking-tighter mb-12 italic border-b border-white/10 pb-8">About Me</h2>
+                <div class="space-y-10 text-2xl font-light leading-relaxed max-w-xl">
                     <p>Ich bin ein 27-jähriger Design-Student im 5. Semester an der Internationalen Hochschule (IU). Ich kombiniere ein scharfes Auge für Details mit einem ausgeprägten Sinn für Balance und Harmonie.</p>
-                    <p class="text-zinc-500 italic">"Design ist für mich die perfekte Balance zwischen Ästhetik und Funktion."</p>
+                    <p class="text-zinc-500 italic border-l-2 border-white/20 pl-8">"Design ist für mich die perfekte Balance zwischen Ästhetik und Funktion."</p>
                 </div>
 
-                <div class="grid grid-cols-2 gap-12 mt-20 border-t border-white/10 pt-12">
+                <div class="grid grid-cols-2 gap-16 mt-24 border-t border-white/10 pt-16">
                     <div>
-                        <h3 class="text-[10px] font-black tracking-[0.3em] uppercase text-zinc-600 mb-6">Skills</h3>
-                        <ul class="text-sm font-bold uppercase space-y-2">
+                        <h3 class="text-[11px] font-black tracking-[0.4em] uppercase text-zinc-600 mb-8">Expertise</h3>
+                        <ul class="text-sm font-bold uppercase space-y-3 tracking-tight">
                             <li>Adobe Creative Cloud</li>
                             <li>Canva & Figma</li>
                             <li>Typografie & Branding</li>
+                            <li>Editorial Design</li>
                         </ul>
                     </div>
                     <div>
-                        <h3 class="text-[10px] font-black tracking-[0.3em] uppercase text-zinc-600 mb-6">Sprachen</h3>
-                        <ul class="text-sm font-bold uppercase space-y-2">
+                        <h3 class="text-[11px] font-black tracking-[0.4em] uppercase text-zinc-600 mb-8">Sprachen</h3>
+                        <ul class="text-sm font-bold uppercase space-y-3 tracking-tight">
                             <li>Portugiesisch (Native)</li>
                             <li>Deutsch (C1)</li>
                             <li>Englisch (B1)</li>
@@ -156,102 +160,106 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="py-40 px-8 max-w-screen-xl mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-32 gap-8">
-            <h2 class="text-7xl md:text-9xl font-black uppercase tracking-tighter italic leading-none">Selected<br>Works</h2>
-            <div class="text-[10px] font-black tracking-[0.4em] uppercase opacity-40 pb-4">Selected Work / 24-26</div>
+    <section id="portfolio" class="py-48 px-8 max-w-screen-xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-40 gap-10">
+            <h2 class="text-8xl md:text-[10rem] font-black uppercase tracking-tighter italic leading-none">Portfolio</h2>
+            <div class="text-[11px] font-black tracking-[0.5em] uppercase opacity-30 pb-6 border-b border-black">Selected Works / 2026</div>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-x-20 gap-y-40">
+        <div class="grid md:grid-cols-2 gap-x-24 gap-y-48">
             <!-- Project 1: Logo & Branding -->
-            <div class="reveal group">
-                <div class="relative mb-12 overflow-hidden aspect-[4/3] bg-zinc-50 organic-mask transition-all duration-700 group-hover:scale-[0.98] border border-black/5 flex items-center justify-center">
-                    <span class="text-[10px] font-black uppercase tracking-widest opacity-10">Logo & Branding Project</span>
+            <div class="reveal group cursor-pointer">
+                <div class="relative mb-14 overflow-hidden aspect-[4/3] bg-zinc-50 organic-mask transition-all duration-700 group-hover:scale-[0.97] border border-black/5 flex items-center justify-center">
+                    <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-5 transition-opacity"></div>
+                    <span class="text-[10px] font-black uppercase tracking-[0.4em] opacity-10 group-hover:opacity-40 transition-opacity">Logo & Branding</span>
                 </div>
-                <div class="flex justify-between items-end border-b-2 border-black pb-4">
-                    <h3 class="text-3xl font-black uppercase tracking-tighter italic">Logo & Branding</h3>
-                    <span class="text-sm font-black italic">01</span>
+                <div class="flex justify-between items-end border-b-2 border-black pb-6">
+                    <h3 class="text-4xl font-black uppercase tracking-tighter italic group-hover:translate-x-4 transition-transform">Logo & Branding</h3>
+                    <span class="text-lg font-black italic opacity-20">01</span>
                 </div>
             </div>
 
             <!-- Project 2: Editorial -->
-            <div class="reveal group md:mt-40">
-                <div class="relative mb-12 overflow-hidden aspect-[4/3] bg-zinc-50 organic-loop transition-all duration-700 group-hover:scale-[0.98] border border-black/5 flex items-center justify-center">
-                    <span class="text-[10px] font-black uppercase tracking-widest opacity-10">Editorial Design Project</span>
+            <div class="reveal group md:mt-48 cursor-pointer">
+                <div class="relative mb-14 overflow-hidden aspect-[4/3] bg-zinc-50 organic-loop transition-all duration-700 group-hover:scale-[0.97] border border-black/5 flex items-center justify-center">
+                    <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-5 transition-opacity"></div>
+                    <span class="text-[10px] font-black uppercase tracking-[0.4em] opacity-10 group-hover:opacity-40 transition-opacity">Editorial Design</span>
                 </div>
-                <div class="flex justify-between items-end border-b-2 border-black pb-4">
-                    <h3 class="text-3xl font-black uppercase tracking-tighter italic">Editorial Design</h3>
-                    <span class="text-sm font-black italic">02</span>
+                <div class="flex justify-between items-end border-b-2 border-black pb-6">
+                    <h3 class="text-4xl font-black uppercase tracking-tighter italic group-hover:translate-x-4 transition-transform">Editorial Design</h3>
+                    <span class="text-lg font-black italic opacity-20">02</span>
                 </div>
             </div>
 
             <!-- Project 3: UI/UX Design -->
-            <div class="reveal group">
-                <div class="relative mb-12 overflow-hidden aspect-[4/3] bg-zinc-50 organic-loop transition-all duration-700 group-hover:scale-[0.98] border border-black/5 flex items-center justify-center">
-                    <span class="text-[10px] font-black uppercase tracking-widest opacity-10">UI/UX Design Project</span>
+            <div class="reveal group cursor-pointer">
+                <div class="relative mb-14 overflow-hidden aspect-[4/3] bg-zinc-50 organic-loop transition-all duration-700 group-hover:scale-[0.97] border border-black/5 flex items-center justify-center">
+                    <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-5 transition-opacity"></div>
+                    <span class="text-[10px] font-black uppercase tracking-[0.4em] opacity-10 group-hover:opacity-40 transition-opacity">UI/UX Design</span>
                 </div>
-                <div class="flex justify-between items-end border-b-2 border-black pb-4">
-                    <h3 class="text-3xl font-black uppercase tracking-tighter italic">UI/UX Design</h3>
-                    <span class="text-sm font-black italic">03</span>
+                <div class="flex justify-between items-end border-b-2 border-black pb-6">
+                    <h3 class="text-4xl font-black uppercase tracking-tighter italic group-hover:translate-x-4 transition-transform">UI/UX Design</h3>
+                    <span class="text-lg font-black italic opacity-20">03</span>
                 </div>
             </div>
 
             <!-- Project 4: Wireframes -->
-            <div class="reveal group md:mt-40">
-                <div class="relative mb-12 overflow-hidden aspect-[4/3] bg-zinc-50 organic-mask transition-all duration-700 group-hover:scale-[0.98] border border-black/5 flex items-center justify-center">
-                    <span class="text-[10px] font-black uppercase tracking-widest opacity-10">Wireframe Project</span>
+            <div class="reveal group md:mt-48 cursor-pointer">
+                <div class="relative mb-14 overflow-hidden aspect-[4/3] bg-zinc-50 organic-mask transition-all duration-700 group-hover:scale-[0.97] border border-black/5 flex items-center justify-center">
+                    <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-5 transition-opacity"></div>
+                    <span class="text-[10px] font-black uppercase tracking-[0.4em] opacity-10 group-hover:opacity-40 transition-opacity">Wireframes</span>
                 </div>
                 <div class="flex justify-between items-end border-b-2 border-black pb-4">
-                    <h3 class="text-3xl font-black uppercase tracking-tighter italic">Wireframes</h3>
-                    <span class="text-sm font-black italic">04</span>
+                    <h3 class="text-4xl font-black uppercase tracking-tighter italic group-hover:translate-x-4 transition-transform">Wireframes</h3>
+                    <span class="text-lg font-black italic opacity-20">04</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer / Contact -->
-    <footer id="contact" class="bg-black text-white pt-48 pb-12 px-8 overflow-hidden relative">
+    <footer id="contact" class="bg-black text-white pt-64 pb-16 px-8 overflow-hidden relative">
         <div class="max-w-screen-xl mx-auto">
-            <div class="text-center mb-48 reveal">
-                <h2 class="text-[12vw] font-black uppercase tracking-tighter leading-none italic mb-16">Ready to<br>Create?</h2>
-                <div class="flex flex-col items-center gap-12 mt-20">
-                    <a href="mailto:byekahmi@gmail.com" class="text-3xl md:text-5xl font-black hover:opacity-50 transition-all uppercase tracking-tighter underline underline-offset-[12px] decoration-1">byekahmi@gmail.com</a>
+            <div class="text-center mb-64 reveal">
+                <h2 class="text-[13vw] font-black uppercase tracking-tighter leading-none italic mb-20">Ready to<br>Create?</h2>
+                <div class="flex flex-col items-center gap-16 mt-24">
+                    <a href="mailto:byekahmi@gmail.com" class="text-3xl md:text-6xl font-black hover:opacity-50 transition-all uppercase tracking-tighter underline underline-offset-[16px] decoration-1">byekahmi@gmail.com</a>
                     
-                    <div class="flex flex-col md:flex-row gap-8 items-center mt-8">
-                        <a href="https://www.instagram.com/byekahmi/" target="_blank" class="text-xs font-black tracking-[0.4em] uppercase hover:line-through">Instagram</a>
-                        <span class="hidden md:block opacity-20 text-2xl">*</span>
-                        <a href="https://www.linkedin.com/in/kiliano-ribeiro-15615b2b4/" target="_blank" class="text-xs font-black tracking-[0.4em] uppercase hover:line-through">LinkedIn</a>
+                    <div class="flex flex-col md:flex-row gap-12 items-center mt-12">
+                        <a href="https://www.instagram.com/byekahmi/" target="_blank" class="text-xs font-black tracking-[0.5em] uppercase hover:line-through transition-all">Instagram</a>
+                        <span class="hidden md:block opacity-20 text-3xl font-light italic">*</span>
+                        <a href="https://www.linkedin.com/in/kiliano-ribeiro-15615b2b4/" target="_blank" class="text-xs font-black tracking-[0.5em] uppercase hover:line-through transition-all">LinkedIn</a>
                     </div>
                 </div>
 
-                <!-- PDF Portfolio Download Button -->
-                <div class="mt-32">
-                    <a href="PORTFOLIO-byekahmi-small.pdf" target="_blank" class="inline-block px-16 py-6 bg-white text-black font-black uppercase tracking-[0.3em] text-[10px] organic-mask hover:scale-105 transition-transform">
+                <!-- PDF Portfolio Link -->
+                <div class="mt-40">
+                    <a href="PORTFOLIO-byekahmi-small.pdf" target="_blank" class="inline-block px-20 py-8 bg-white text-black font-black uppercase tracking-[0.4em] text-[11px] organic-mask hover:scale-105 transition-transform shadow-2xl">
                         View Portfolio PDF
                     </a>
                 </div>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-16 pt-24 border-t border-white/5">
+            <div class="grid md:grid-cols-3 gap-20 pt-32 border-t border-white/5 items-end">
                 <div>
-                    <h4 class="text-[10px] font-black tracking-[0.4em] uppercase text-zinc-600 mb-8">Details</h4>
-                    <p class="text-sm font-bold uppercase tracking-tighter leading-relaxed">
+                    <h4 class="text-[11px] font-black tracking-[0.5em] uppercase text-zinc-700 mb-10">Information</h4>
+                    <p class="text-sm font-bold uppercase tracking-tight leading-relaxed">
                         Kiliano Lucas Ribeiro<br>
                         Charlottenburg, Berlin<br>
-                        5. Semester IU Design
+                        5. Semester IU Mediendesign
                     </p>
                 </div>
-                <div>
-                    <h4 class="text-[10px] font-black tracking-[0.4em] uppercase text-zinc-600 mb-8">Connect</h4>
-                    <p class="text-sm font-bold uppercase tracking-tighter">+49 0162 7622077</p>
+                <div class="flex flex-col gap-4">
+                    <h4 class="text-[11px] font-black tracking-[0.5em] uppercase text-zinc-700 mb-6">Reach out</h4>
+                    <p class="text-sm font-bold uppercase tracking-widest opacity-60">byekahmi@gmail.com</p>
                 </div>
-                <div class="md:text-right flex flex-col md:items-end gap-6">
-                    <img src="https://drive.google.com/file/d/1WXahZixj-1oM6loESfFSRLQVt61_AkPN/view" alt="Logo" class="h-12 w-auto brightness-0 invert opacity-40">
-                    <p class="text-[8px] font-black tracking-[0.5em] uppercase text-zinc-700">© 2026 BYEKAHMI STUDIO — ALL RIGHTS RESERVED</p>
+                <div class="md:text-right flex flex-col md:items-end gap-10">
+                    <img src="logo-byekahmi.png" alt="Logo" class="h-16 w-auto brightness-0 invert opacity-40 transition-opacity hover:opacity-100">
+                    <p class="text-[9px] font-black tracking-[0.6em] uppercase text-zinc-800">© 2026 BYEKAHMI STUDIO — ALL RIGHTS RESERVED</p>
                 </div>
             </div>
         </div>
-    </section>
+    </footer>
 
     <script>
         // Scroll Reveal Animation Logic
@@ -267,7 +275,8 @@
             });
         };
         window.addEventListener("scroll", reveal);
-        // Initialer Aufruf
+        // Initialer Check beim Laden der Seite
+        window.addEventListener("load", reveal);
         reveal();
     </script>
 </body>
