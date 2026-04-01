@@ -103,9 +103,8 @@
             <div class="flex flex-col items-center gap-8">
                 <div class="w-px h-24 bg-black/30"></div>
                 <div class="flex items-center gap-6">
-                    <!-- Logo-Symbol groß im Hero -->
-                    <img src="assets/logo-byekahmi.png" alt="Byekahmi Symbol" class="w-20 h-20 object-contain">
-                    <span class="text-2xl font-bold italic tracking-tighter">byekahmi</span>
+                    <!-- Logo-Symbol groß im Hero - ohne Text -->
+                    <img src="assets/logo-byekahmi.png" alt="Byekahmi Symbol" class="w-24 h-24 object-contain">
                 </div>
             </div>
         </div>
@@ -117,8 +116,8 @@
         <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 organic-loop blur-3xl -mr-48 -mt-48"></div>
 
         <div class="max-w-screen-xl mx-auto grid lg:grid-cols-2 gap-24 items-center relative z-10">
-            <div class="reveal">
-                <div class="relative">
+            <div class="reveal flex flex-col md:flex-row items-center gap-8">
+                <div class="relative flex-1">
                     <div class="aspect-[3/4] organic-mask bg-zinc-900 overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 border border-white/10 shadow-2xl">
                         <!-- Dein Bild 'assets/kahminsky.png' -->
                         <img src="assets/kahminsky.png" alt="Kiliano Lucas Ribeiro" class="w-full h-full object-cover" onerror="this.style.background='#18181b';">
@@ -127,6 +126,10 @@
                     <div class="absolute -bottom-12 -right-12 w-48 h-48 border border-white/20 rounded-full flex items-center justify-center animate-pulse">
                         <span class="text-5xl font-black italic opacity-10 select-none">K</span>
                     </div>
+                </div>
+                <!-- Logo neben dem Bild -->
+                <div class="hidden md:block w-24">
+                    <img src="assets/logo-byekahmi.png" alt="Logo Akzent" class="w-full h-auto brightness-0 invert opacity-20">
                 </div>
             </div>
             <div class="reveal">
@@ -234,8 +237,8 @@
 
                 <!-- PDF Portfolio Link -->
                 <div class="mt-40">
-                    <a href="assets/PORTFOLIO-byekahmi-small.pdf" target="_blank" class="inline-block px-20 py-8 bg-white text-black font-black uppercase tracking-[0.4em] text-[11px] organic-mask hover:scale-105 transition-transform shadow-2xl">
-                        Portfolio PDF
+                    <a href="assets/portfolio-byekahmi-small.pdf" target="_blank" class="inline-block px-20 py-8 bg-white text-black font-black uppercase tracking-[0.4em] text-[11px] organic-mask hover:scale-105 transition-transform shadow-2xl">
+                        View Portfolio PDF
                     </a>
                 </div>
             </div>
@@ -253,6 +256,7 @@
                     <h4 class="text-[11px] font-black tracking-[0.5em] uppercase text-zinc-700 mb-6">Reach out</h4>
                     <p class="text-sm font-bold uppercase tracking-widest opacity-60">byekahmi@gmail.com</p>
                 </div>
+                <!-- Logo auf der rechten Seite -->
                 <div class="md:text-right flex flex-col md:items-end gap-10">
                     <img src="assets/logo-byekahmi.png" alt="Logo" class="h-16 w-auto brightness-0 invert opacity-40 transition-opacity hover:opacity-100">
                     <p class="text-[9px] font-black tracking-[0.6em] uppercase text-zinc-800">© 2026 BYEKAHMI STUDIO — ALL RIGHTS RESERVED</p>
