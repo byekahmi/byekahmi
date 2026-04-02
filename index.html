@@ -76,8 +76,8 @@
     <!-- Navigation -->
     <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 py-6 border-b border-black/5">
         <div class="max-w-screen-xl mx-auto px-8 flex justify-between items-center">
-            <a href="#home" class="flex items-center gap-3">
-                <img src="assets/logo-byekahmi.png" alt="Byekahmi Logo" class="h-12 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <a href="#contact" class="flex items-center gap-3 group">
+                <img src="assets/logo-byekahmi.png" alt="Byekahmi Logo" class="h-12 w-auto object-contain transition-transform group-hover:scale-110" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                 <div class="hidden w-10 h-10 bg-black rounded-full flex items-center justify-center text-white font-black text-sm">K</div>
                 <span class="font-black text-2xl tracking-tighter uppercase">Byekahmi</span>
             </a>
@@ -99,9 +99,13 @@
                 Graphic<br>Design
             </h1>
             <div class="flex flex-col items-center gap-8">
-                <div class="w-px h-24 bg-black/30"></div>
+                <!-- Verkürzte Trennlinie -->
+                <div class="w-px h-12 bg-black/30"></div>
                 <div class="flex items-center gap-6">
-                    <img src="assets/logo-byekahmi.png" alt="Byekahmi Symbol" class="w-24 h-24 object-contain">
+                    <!-- Logo verlinkt zum Kontaktbereich -->
+                    <a href="#contact" class="block hover:scale-110 transition-transform duration-500">
+                        <img src="assets/logo-byekahmi.png" alt="Byekahmi Symbol" class="w-24 h-24 object-contain">
+                    </a>
                 </div>
             </div>
         </div>
@@ -222,7 +226,6 @@
                     
                     <div class="flex flex-col md:flex-row gap-12 items-center mt-12">
                         <a href="https://www.instagram.com/byekahmi/" target="_blank" class="text-xs font-black tracking-[0.5em] uppercase hover:line-through transition-all">Instagram</a>
-                        <!-- Stern entfernt -->
                         <a href="https://www.linkedin.com/in/kiliano-ribeiro-15615b2b4/" target="_blank" class="text-xs font-black tracking-[0.5em] uppercase hover:line-through transition-all">LinkedIn</a>
                     </div>
                 </div>
@@ -239,7 +242,7 @@
                 <div class="grid md:grid-cols-3 gap-12 items-start">
                     <div class="flex flex-col gap-6">
                         <h4 class="text-[11px] font-black tracking-[0.5em] uppercase text-zinc-700">Information</h4>
-                        <p class="text-sm font-bold uppercase tracking-tight leading-relaxed">
+                        <p class="text-sm font-bold uppercase tracking-tight leading-relaxed text-white">
                             Kiliano Lucas Ribeiro<br>
                             Charlottenburg, Berlin<br>
                             5. Semester IU Mediendesign
@@ -248,11 +251,12 @@
                     
                     <div class="flex flex-col gap-6 md:border-l md:border-white/5 md:pl-12">
                         <h4 class="text-[11px] font-black tracking-[0.5em] uppercase text-zinc-700">Reach out</h4>
-                        <p class="text-sm font-bold uppercase tracking-widest opacity-60">byekahmi@gmail.com</p>
+                        <p class="text-sm font-bold uppercase tracking-widest text-white">byekahmi@gmail.com</p>
                     </div>
 
                     <div class="md:text-right flex flex-col md:items-end gap-10">
-                        <img src="assets/logo-white-byekahmi.png" alt="Logo" class="h-16 w-auto brightness-0 invert opacity-40 transition-opacity hover:opacity-100">
+                        <!-- h-16 w-auto mit object-contain verhindert Verzerrung -->
+                        <img src="assets/logo-white-byekahmi.png" alt="Logo" class="h-16 w-auto object-contain brightness-0 invert opacity-40 transition-opacity hover:opacity-100">
                         <p class="text-[9px] font-black tracking-[0.6em] uppercase text-zinc-800">© 2026 BYEKAHMI STUDIO — ALL RIGHTS RESERVED</p>
                     </div>
                 </div>
