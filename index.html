@@ -77,7 +77,6 @@
     <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 py-6 border-b border-black/5">
         <div class="max-w-screen-xl mx-auto px-8 flex justify-between items-center">
             <a href="#home" class="flex items-center gap-3">
-                <!-- Logo aus dem assets Ordner -->
                 <img src="assets/logo-byekahmi.png" alt="Byekahmi Logo" class="h-12 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                 <div class="hidden w-10 h-10 bg-black rounded-full flex items-center justify-center text-white font-black text-sm">K</div>
                 <span class="font-black text-2xl tracking-tighter uppercase">Byekahmi</span>
@@ -92,7 +91,6 @@
 
     <!-- Home Section -->
     <section id="home" class="min-h-screen flex flex-col justify-center items-center px-8 relative">
-        <!-- Dekorative organische Form im Hintergrund -->
         <div class="absolute -z-10 w-[70vw] h-[70vw] bg-zinc-50 organic-mask float-animation blur-3xl opacity-60"></div>
         
         <div class="text-center reveal">
@@ -103,7 +101,6 @@
             <div class="flex flex-col items-center gap-8">
                 <div class="w-px h-24 bg-black/30"></div>
                 <div class="flex items-center gap-6">
-                    <!-- Logo-Symbol groß im Hero - ohne Text -->
                     <img src="assets/logo-byekahmi.png" alt="Byekahmi Symbol" class="w-24 h-24 object-contain">
                 </div>
             </div>
@@ -112,24 +109,19 @@
 
     <!-- About Me Section -->
     <section id="about" class="py-48 bg-black text-white px-8 relative overflow-hidden">
-        <!-- Organischer Akzent im Hintergrund -->
         <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 organic-loop blur-3xl -mr-48 -mt-48"></div>
 
         <div class="max-w-screen-xl mx-auto grid lg:grid-cols-2 gap-24 items-center relative z-10">
-            <div class="reveal flex flex-col md:flex-row items-center gap-8">
-                <div class="relative flex-1">
+            <div class="reveal flex flex-col md:flex-row items-end gap-8">
+                <div class="relative w-full">
                     <div class="aspect-[3/4] organic-mask bg-zinc-900 overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 border border-white/10 shadow-2xl">
-                        <!-- Dein Bild 'assets/kahminsky.png' -->
                         <img src="assets/kahminsky.png" alt="Kiliano Lucas Ribeiro" class="w-full h-full object-cover" onerror="this.style.background='#18181b';">
                     </div>
-                    <!-- Dekorative Elipse mit Initialen -->
-                    <div class="absolute -bottom-12 -right-12 w-48 h-48 border border-white/20 rounded-full flex items-center justify-center animate-pulse">
-                        <span class="text-5xl font-black italic opacity-10 select-none">K</span>
+                    
+                    <!-- K Logo unten rechts neben dem Bild positioniert -->
+                    <div class="absolute -bottom-6 -right-6 md:-right-20">
+                        <img src="assets/logo-white-byekahmi.png" alt="Logo Akzent" class="w-24 md:w-32 h-auto brightness-0 invert opacity-60 hover:opacity-100 transition-opacity">
                     </div>
-                </div>
-                <!-- Logo neben dem Bild -->
-                <div class="hidden md:block w-24">
-                    <img src="assets/logo-white-byekahmi.png" alt="Logo Akzent" class="w-full h-auto brightness-0 invert opacity-20">
                 </div>
             </div>
             <div class="reveal">
@@ -162,7 +154,7 @@
         </div>
     </section>
 
- <!-- Portfolio Section -->
+    <!-- Portfolio Section -->
     <section id="portfolio" class="py-24 md:py-48 px-6 md:px-8 max-w-screen-xl mx-auto">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 md:40 gap-6 md:10">
             <h2 class="text-6xl md:text-[10rem] font-black uppercase tracking-tighter italic leading-none">Portfolio</h2>
@@ -230,12 +222,11 @@
                     
                     <div class="flex flex-col md:flex-row gap-12 items-center mt-12">
                         <a href="https://www.instagram.com/byekahmi/" target="_blank" class="text-xs font-black tracking-[0.5em] uppercase hover:line-through transition-all">Instagram</a>
-                        <span class="hidden md:block opacity-20 text-3xl font-light italic">*</span>
+                        <!-- Stern entfernt -->
                         <a href="https://www.linkedin.com/in/kiliano-ribeiro-15615b2b4/" target="_blank" class="text-xs font-black tracking-[0.5em] uppercase hover:line-through transition-all">LinkedIn</a>
                     </div>
                 </div>
 
-                <!-- PDF Portfolio Link -->
                 <div class="mt-40">
                     <a href="assets/portfolio-byekahmi-small.pdf" target="_blank" class="inline-block px-20 py-8 bg-white text-black font-black uppercase tracking-[0.4em] text-[11px] organic-mask hover:scale-105 transition-transform shadow-2xl">
                         Portfolio PDF
@@ -243,30 +234,33 @@
                 </div>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-20 pt-32 border-t border-white/5 items-end">
-                <div>
-                    <h4 class="text-[11px] font-black tracking-[0.5em] uppercase text-zinc-700 mb-10">Information</h4>
-                    <p class="text-sm font-bold uppercase tracking-tight leading-relaxed">
-                        Kiliano Lucas Ribeiro<br>
-                        Charlottenburg, Berlin<br>
-                        5. Semester IU Mediendesign
-                    </p>
-                </div>
-                <div class="flex flex-col gap-4">
-                    <h4 class="text-[11px] font-black tracking-[0.5em] uppercase text-zinc-700 mb-6">Reach out</h4>
-                    <p class="text-sm font-bold uppercase tracking-widest opacity-60">byekahmi@gmail.com</p>
-                </div>
-                <!-- Logo auf der rechten Seite -->
-                <div class="md:text-right flex flex-col md:items-end gap-10">
-                    <img src="assets/logo-white-byekahmi.png" alt="Logo" class="h-16 w-auto brightness-0 invert opacity-40 transition-opacity hover:opacity-100">
-                    <p class="text-[9px] font-black tracking-[0.6em] uppercase text-zinc-800">© 2026 BYEKAHMI STUDIO — ALL RIGHTS RESERVED</p>
+            <!-- Unterer Bereich mit durchgehender Linie für Info & Reach Out -->
+            <div class="pt-16 border-t border-white/10">
+                <div class="grid md:grid-cols-3 gap-12 items-start">
+                    <div class="flex flex-col gap-6">
+                        <h4 class="text-[11px] font-black tracking-[0.5em] uppercase text-zinc-700">Information</h4>
+                        <p class="text-sm font-bold uppercase tracking-tight leading-relaxed">
+                            Kiliano Lucas Ribeiro<br>
+                            Charlottenburg, Berlin<br>
+                            5. Semester IU Mediendesign
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col gap-6 md:border-l md:border-white/5 md:pl-12">
+                        <h4 class="text-[11px] font-black tracking-[0.5em] uppercase text-zinc-700">Reach out</h4>
+                        <p class="text-sm font-bold uppercase tracking-widest opacity-60">byekahmi@gmail.com</p>
+                    </div>
+
+                    <div class="md:text-right flex flex-col md:items-end gap-10">
+                        <img src="assets/logo-white-byekahmi.png" alt="Logo" class="h-16 w-auto brightness-0 invert opacity-40 transition-opacity hover:opacity-100">
+                        <p class="text-[9px] font-black tracking-[0.6em] uppercase text-zinc-800">© 2026 BYEKAHMI STUDIO — ALL RIGHTS RESERVED</p>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Scroll Reveal Animation Logic
         const reveal = () => {
             const reveals = document.querySelectorAll(".reveal");
             reveals.forEach(element => {
@@ -279,7 +273,6 @@
             });
         };
         window.addEventListener("scroll", reveal);
-        // Initialer Check beim Laden der Seite
         window.addEventListener("load", reveal);
         reveal();
     </script>
